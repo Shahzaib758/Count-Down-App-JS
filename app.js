@@ -54,6 +54,9 @@ function countdown() {
         // Styling On Button
         btnStart.disabled = false;
         btnStart.style.opacity = '1';
+
+        inputEleForMins.value = 0;
+        inputEleForSec.value = 0;
     }
 }
 
@@ -86,10 +89,13 @@ function startTimer() {
 function stopTimer() {
 
     clearInterval(interval);
+    
+    inputEleForMins.value = parseInt(minsEle.innerText)
+    inputEleForSec.value = parseInt(secEle.innerText)
 
-    // // Styling On Button
-    // btnStart.disabled = false;
-    // btnStart.style.opacity = '1';
+    // Styling On Button
+    btnStart.disabled = false;
+    btnStart.style.opacity = '1';
 
     // Disabiling stop button
     btnStop.disabled = true;
@@ -119,7 +125,7 @@ function setTimer() {
 
     btnStop.disabled = false;
     btnStop.style.opacity = '1';
-    
+
     // Disabliling Set Timer Button
     btnSetTimer.disabled = true;
     btnStop.style.opacity = '0.3';
